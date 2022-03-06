@@ -14,7 +14,10 @@ func _ready():
 	set_physics_process(true)
 
 func _physics_process(delta):
-	pass
+	if Input.is_action_pressed("ui_up"):
+		move_and_collide(Vector2(0, -movement_speed * delta))
+	if Input.is_action_pressed("ui_down"):
+		move_and_collide(Vector2(0, movement_speed * delta))
 			
 func _process(delta):
 	pass
